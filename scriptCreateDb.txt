@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS `test`;
+CREATE TABLE test(
+ id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ advcampaign_id INT (11) NOT NULL,
+ order_id INT (11) NOT NULL,
+ status VARCHAR(30)  NOT NULL,
+ cart INT (11) NOT NULL ,
+ currency VARCHAR(30)  NOT NULL,
+ action_date DATETIME (6) NOT NULL,
+ CONSTRAINT UNIQUE_ID UNIQUE (advcampaign_id,order_id)
+)
+
+CREATE UNIQUE INDEX PIndex
+ON test (advcampaign_id, order_id)
